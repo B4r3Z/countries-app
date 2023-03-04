@@ -1,0 +1,49 @@
+.card {
+  border: 2px #13d1a8 solid;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  font-family: Satoshi;
+  width: 20rem;
+}
+
+.card figure img {
+  object-fit: cover;
+  height: 180px;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.content {
+  text-align: left;
+}
+
+.content h1 {
+  font-size: 1.2rem;
+  padding: 0.5rem 0 0.5rem 0;
+  color: #259c25;
+}
+.content h2 {
+  font-size: 1rem;
+  padding-bottom: 2rem;
+  color: #687faf;
+}
+.read-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #9ad69a;
+  padding: 0.5rem;
+}
+
+.read-more a {
+  color: #3d57a3;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  background-color: #d1dd4b;
+}
