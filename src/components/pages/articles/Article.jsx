@@ -13,9 +13,22 @@ const Article = () => {
   };
 
   const filterData = () => {
-    return data.filter((element) =>
-      element.name.official.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    return data.filter((element) => {
+      if (element.flags.alt !== undefined) {
+        const regex = new RegExp(
+          `(${searchTerm}|${searchTerm}\\s|${searchTerm},)`,
+          "i"
+        ); // Create a regex to match search term or term with space or comma
+        return (
+          regex.test(element.name.official.toLowerCase()) || // Check for match in official name
+          regex.test(element.flags.alt.toLowerCase()) // Check for match in alt flag
+        );
+      } else {
+        return element.name.official
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      }
+    });
   };
 
   const showCountry = filterData().map((element) => {
